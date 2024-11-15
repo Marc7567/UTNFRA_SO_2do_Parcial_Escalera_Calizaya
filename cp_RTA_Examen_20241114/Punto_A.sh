@@ -30,7 +30,7 @@ w
 #limpiamos los discos
 sudo wipefs -a /dev/sde1
 sudo wipefs -a /dev/sde2
-#sudo wipefs -a /dev/sde3
+sudo wipefs -a /dev/sde3
 
 #ahora creamos lo volumenes fisicos
 sudo pvcreate /dev/sde1 /dev/sde2 /dev/sde3

@@ -47,6 +47,10 @@ sudo lvcreate -L 5M vg_datos -n lv_docker
 sudo lvcreate -L 1.5G vg_datos -n lv_workareas
 sudo lvcreate -L 512M vg_temp -n lv_swap
 
+echo ''
+echo "verificamos que se hayan creado los volumenes"
+sudo lvs
+
 #ahora formateamos los volumenes logicos
 sudo fdisk -l
 sudo mkfs.ext4 /dev/mapper/vg_datos-lv_docker
@@ -55,21 +59,27 @@ sudo mkfs.ext4 /dev/mapper/vg_temp-lv_swap
 
 sudo lsblk -f
 
-#instalamos apache2 (no es necesario)
-sudo apt update
-sudo apt install apache2
-
 #montamos los discos
 sudo mount /dev/mapper/vg_datos-lv_docker /var/lib/docker/
 
-
 #falta montar la de la memoria swap (crear un archivo)
 sudo dd if=/dev/sde3 of=swap.file bs=1M count=1024
-sudo mkswap swap.file
-sudo swapon swap.file
+
+#movemos el archivo swap a la direccion /home/usu/
+sudo mv swap.file /home/Escalera/
+
+#cambiamos los derechos del archivo swap
+sudo chmod 777 /home/Escalera/swap.file
+
+#sudo mkswap swap.file
+sudo mkswap /home/Escalera/swap.file
+
+#sudo swapon swap.file
+sudo swapon /home/Escalera/swap.file
+
 
 #montamos el archivo swap
-sudo mount /dev/mapper/vg_temp-lv_swap /home/vagrant/swap.file
+sudo mount /dev/mapper/vg_temp-lv_swap /home/Escalera/swap.file
 
 #verificamos
 df -h

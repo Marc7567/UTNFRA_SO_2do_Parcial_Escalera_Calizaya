@@ -1,0 +1,1099 @@
+    1  clear
+    2  sudo fdisk -l
+    3  clear
+    4  git clone https://github.com/upszot/UTN-FRA_SO_Examenes.git
+    5  clear
+    6  ./UTN-FRA_SO_Examenes/202406/script_Precondicion.sh
+    7  source ~/.bashrc
+    8  sudo apt update
+    9  clear
+   10  sudo apt install ansible -y
+   11  clear
+   12  sudo apt list --installed |grep ansible
+   13  sudo apt install git
+   14  clear
+   15  ls -l /home/Escalera/.ssh
+   16  ssh-keygen -t ed25519
+   17  ls -l /home/Escalera/.ssh
+   18  cat /home/Escalera/.ssh/id_ed25519.pub 
+   19  cat /home/Escalera/.ssh/id_ed25519.pub >> /home/Escalera/.ssh/authorized_keys
+   20  ls -l /home/Escalera/.ssh
+   21  w
+   22  clear
+   23  ls -l 
+   24  for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+   25  # Add Docker's official GPG key:
+   26  sudo apt-get update
+   27  sudo apt-get install ca-certificates curl
+   28  sudo install -m 0755 -d /etc/apt/keyrings
+   29  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+   30  sudo chmod a+r /etc/apt/keyrings/docker.asc
+   31  # Add the repository to Apt sources:
+   32  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+   33    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   34  sudo apt-get update
+   35  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   36  clear
+   37  sudo docker run hello-world
+   38  clear
+   39  sudo usermod -a -G docker $(whoami)
+   40  grep docker /etc/group
+   41  docker ps
+   42  exit
+   43  sudo su - Escalera
+   44  dosker ps
+   45  exit
+   46  clear
+   47  docker ps
+   48  clear
+   49  sudo systemctl status docker
+   50  clear
+   51  ls -l
+   52  ls -l RTA_Examen_20241115/
+   53  git clone git@github.com:Marc7567/UTNFRA_SO_2do_Parcial_Escalera_Calizaya.git
+   54  clear
+   55  ls -l
+   56  cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/
+   57  ls -l
+   58  cd  cp_RTA_Examen_20241114/
+   59  ls -l
+   60  chmod 777 Punto_A.sh 
+   61  chmod 777 Punto_B.sh 
+   62  chmod 777 Punto_C.sh 
+   63  chmod 777 Punto_D.sh 
+   64  ls -l
+   65  vim Punto_A.sh 
+   66  vim Punto_B.sh 
+   67  ./Punto_B.sh 
+   68  clear
+   69  cd ..
+   70  git add .
+   71  git commit -m "2do commit"
+   72  git push
+   73  clear
+   74  exit
+   75  sudo su - Escalera
+   76  exit
+   77  ls -l
+   78  cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/
+   79  ls -l
+   80  cd cp_RTA_Examen_20241114/
+   81  ls -l
+   82  ./Punto_B.sh 
+   83  clear
+   84  cd ..
+   85  sudo fdisk -L
+   86  sudo fdisk -l
+   87  sudo fdisk /dev/sde
+   88  sudo fdisk -l
+   89  sudo wipesfs -a /dev/sde1
+   90  sudo wipefs -a /dev/sde1
+   91  cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114/
+   92  vim Punto_A.sh 
+   93  cd 
+   94  pwd
+   95  sudo pvcreate /dev/sde1
+   96  sudo pvs
+   97  sudo vgcreate vg_temp /dev/sde1
+   98  sudo ngs
+   99  sudo vgs
+  100  clear
+  101  sudo vgs
+  102  sudo lvcreate -L 512M vg_temp -n lv_swap
+  103  sudo fdisk -l
+  104  sudo vgs
+  105  sudo lvm
+  106  sudo vgs
+  107  sudo lvcreate -L 512M vg_temp -n lv_swap
+  108  sudo lvcreate -L 506M vg_temp -n lv_swap
+  109  sudo lvs
+  110  sudo fdisk -l
+  111  sudo mkfs.ext4 /dev/mapper/vg_temp-lv-swap
+  112  sudo mkfs.ext4 /dev/mapper/vg_temp-lv_swap
+  113  sudo lsblk -f
+  114  sudo dd if=/dev/sde1 of=swap.file bs=1M count=1024
+  115  mv swap.file /home
+  116  sudo mv swap.file /home
+  117  ls- l
+  118  ls -l
+  119  ls -l /home/
+  120  sudo mv swap.file /home/Escalera/
+  121  sudo mv /home/swap.file /home/Escalera/
+  122  ls -l /home/
+  123  ls -l 
+  124  ls -l /home/
+  125  ls -l
+  126  clear
+  127  cd UTN-FRA_SO_Examenes/
+  128  sudo mkswap /home/Escalera/swap.file
+  129  ls -l /home/Escalera/
+  130  sudo mkswap /home/Escalera/swap.file
+  131  clear
+  132  ls -l
+  133  cd RTA_Examen_20241115/
+  134  chmod 777 /home/Escalera/swap.file
+  135  sudo chmod 777 /home/Escalera/swap.file
+  136  ls -l /home/Escalera/
+  137  sudo mount /dev/mapper/vg_temp-lv_swap /home/Escalera/swap.file
+  138  clear
+  139  cd ..
+  140  cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114/
+  141  cd ..
+  142  git add .
+  143  git commit -m "correcion de errores"
+  144  git push
+  145  clear
+  146  cd cp_RTA_Examen_20241114/
+  147  vim Punto_A.sh 
+  148  cd ..
+  149  pwd
+  150  git add .
+  151  git commit -m "correcion de errores"
+  152  git push
+  153  clear
+  154  cd ..
+  155  ls -l
+  156  cd UTN-FRA_SO_Examenes/202406/docker/
+  157  ls -l
+  158  cat index.html
+  159  vim index.html 
+  160  clear
+  161  cd ..1q
+  162  cd ..
+  163  ls -l
+  164  ls -l docker/
+  165  cd docker/
+  166  exit
+  167  cd docker/
+  168  ls -l
+  169  cd UTN-FRA_SO_Examenes/
+  170  cd 202406/docker/
+  171  ls -l
+  172  clear
+  173  ls -l
+  174  pwd
+  175  docker build -t some-content-nginx
+  176  clear
+  177  docker build -t marc7567/web1-Escalera_Calizaya:latest .
+  178  docker build -t marc7567/web1-Escalera_Calizaya:latest . 
+  179  docker build -t marc7567/web1-Escalera:latest . 
+  180  docker build -t marc7567/web1:latest . 
+  181  docker build -t marc7567/web1Escalera:latest . 
+  182  docker build -t marc7567/web1Escalera :latest . 
+  183  clear
+  184  docker build -t marc7567/web1-Escalera:latest .
+  185  docker build -t marc7567/web1:latest .
+  186  docker login -u marc7567
+  187  clear
+  188  docker build -t marc7567/web1-Escalera:latest .
+  189  docker build -t marc7567/web1-Escalera:latest
+  190  docker build -t marc7567/web1-Escalera:latest .
+  191  docker build -t -a marc7567/web1-Escalera:latest .
+  192  docker buildx build --help
+  193  docker build -t -f marc7567/web1-Escalera:latest .
+  194  docker build -t -q marc7567/web1-Escalera:latest .
+  195  docker build -t -o marc7567/web1-Escalera:latest .
+  196  docker build -t -d marc7567/web1-Escalera:latest .
+  197  docker build -t -D marc7567/web1-Escalera:latest .
+  198  docker build -t marc7567/web1-Escalera:latest .
+  199  clear
+  200  docker build -t marc7567/web1-Escalera:latest .
+  201  docker build -t marc7567/web1-Escalera
+  202  docker build -t web1:Escalera
+  203  docker build -t web1-Escalera
+  204  docker build -t web1-Escalera .q
+  205  docker build -t web1-Escalera .
+  206  ls -la
+  207  docker build -t web1-Escalera .
+  208  ls -l
+  209  cat index.html 
+  210  docker build -t web1-escalera .
+  211  docker image list
+  212  docker build -t web1-escalera .
+  213  docker image list
+  214  docker image list hello-world
+  215  docker image list
+  216  clear
+  217  docker image list
+  218  docker build -t web1-escalera:latest .
+  219  docker image list
+  220  docker build -t marc7567/web1-escalera .
+  221  docker image list
+  222  docker build -t marc7567/web1-escalera:latest .
+  223  docker image list
+  224  clear
+  225  docker build -t marc7567/web1-escalera:latest .
+  226  docker image list
+  227  vim dockerfile
+  228  docker build -t marc7567/web1-escalera:latest .
+  229  docker image list
+  230  FROM nginx >> basura
+  231  sudo FROM nginx >> basura
+  232  ls -l
+  233  rm basura 
+  234  ls -l
+  235  clear
+  236  docker push marc7567/web1-escalera
+  237  cd UTN-FRA_SO_Examenes/202406/docker/
+  238  ls -l
+  239  docker push marc7567/web1-escalera:latest
+  240  curl localhost:8080
+  241  docker run -d -p 80:80 marc7567/web1-escalera7567/web1-escalera
+  242  docker ps
+  243  q
+  244  docker ps
+  245  clear
+  246  docker ps
+  247  docker run -d -p 80:80 marc7567/web1-escalera7567/web1-escalera
+  248  docker run -d -p 80:80 marc7567/web1-escalera7567/web1-escalera:latest
+  249  docker run -d -p 80:80 marc7567/web1-escalera7567
+  250  docker run -d -p 80:80 marc7567/web1-escalera
+  251  docker ps
+  252  curl localhost:8080
+  253  curl localhost:80
+  254  docker ps
+  255  vim index.html 
+  256  curl localhost:80
+  257  docker ps
+  258  clear
+  259  curl localhost:80
+  260  vim dockerfile 
+  261  vim index.html 
+  262  vim run.sh
+  263  ls -l
+  264  curl localhost:8080
+  265  curl localhost:80
+  266  ./run.sh
+  267  ls -l
+  268  chmod 777 run.sh 
+  269  ls -l
+  270  #!/bin/bash > esta.sh
+  271  ls -l
+  272  sudo #!/bin/bash > esta.sh
+  273  sudo /bin/bash > esta.sh
+  274  sudo $(#!/bin/bash) > esta.sh
+  275  q
+  276  qw
+  277  wq
+  278  as
+  279  exit
+  280  cd UTN-FRA_SO_Examenes/202406/docker/
+  281  touch esta.sh
+  282  ls -l
+  283  #!/bin/bash > esta.sh 
+  284  ls -l
+  285  cat esta.sh 
+  286  vim esta.sh 
+  287  sudo vim esta.sh 
+  288  ls -l
+  289  sudo vim esta.sh 
+  290  rm esta.sh 
+  291  ls -l
+  292  clear
+  293  ./run.sh q
+  294  ./run.sh
+  295  clear
+  296  docker container ls
+  297  docker stop 18a
+  298  docker container ls
+  299  clear
+  300  docker build -t marc7567/web1-escalera:latest .
+  301  ls -l
+  302  vim index.html 
+  303  vim dockerfile 
+  304  docker build -t marc7567/web1-escalera:latest .
+  305  vim dockerfile 
+  306  docker build -t marc7567/web1-escalera:latest .
+  307  vim dockerfile 
+  308  docker build -t marc7567/web1-escalera:latest .
+  309  docker image list
+  310  docker push marc7567/web1-escalera:latest
+  311  docker run -d -p 8080:80 marc7567/web1-escalera
+  312  docker ps
+  313  curl localhost:8080
+  314  curl localhost:80
+  315  ls -l
+  316  vim dockerfile 
+  317  docker ps
+  318  docker stop ffa
+  319  docker ps
+  320  clear
+  321  docker build -t marc7567/web1-escalera:latest .
+  322  vim dockerfile 
+  323  docker build -t marc7567/web1-escalera:latest .
+  324  vim dockerfile 
+  325  docker build -t marc7567/web1-escalera:latest .
+  326  docker image list
+  327  docker pull marc7567/web1-escalera
+  328  curl localhost:80
+  329  curl localhost:8080
+  330  vim dockerfile 
+  331  vim index.html 
+  332  docker build -t marc7567/web1-escalera:latest .
+  333  vim dockerfile 
+  334  docker build -t marc7567/web1-escalera:latest .
+  335  vim dockerfile 
+  336  docker build -t marc7567/web1-escalera:latest .
+  337  docker iage list
+  338  docker image list
+  339  docker push marc7567/web1-escalera:latest
+  340  docker run -d -p 8080:80 marc7567/web1-escalera
+  341  docker ps
+  342  curl localhost:8080
+  343  if config; q; q; w; as
+  344  cd UTN-FRA_SO_Examenes/202406/docker/
+  345  curl localhost:8080
+  346  ifconfig
+  347  sudo apt install net-tools 
+  348  ifconfig
+  349  clear
+  350  ls -l
+  351  vim dockerfile 
+  352  vim i
+  353  ls -l
+  354  vim index.html 
+  355  docker build -t marc7567/web1-escalera:latest .
+  356  docker push marc7567/web1-escalera:latest
+  357  docker ps
+  358  docker stop 118
+  359  docker run -d -p 8080:80 marc7567/web1-escalera
+  360  curl localhost:8080
+  361  docker pull marc7567/web1-escalera
+  362  clear
+  363  ls -l
+  364  vim dockerfile 
+  365  docker build -t marc7567/web1-escalera:latest .
+  366  vim dockerfile 
+  367  docker build -t marc7567/web1-escalera:latest .
+  368  ls -l
+  369  ll share/hmtl/
+  370  vim dockerfile 
+  371  pwd
+  372  vim dockerfile 
+  373  docker build -t marc7567/web1-escalera:latest .
+  374  vim dockerfile 
+  375  docker build -t marc7567/web1-escalera:latest .
+  376  clear
+  377  vim dockerfile 
+  378  docker build -t marc7567/web1-escalera:latest .
+  379  vim dockerfile 
+  380  docker build -t marc7567/web1-escalera:latest .
+  381  clear
+  382  docker build -t marc7567/web1-escalera:latest .
+  383  ls -l
+  384  vim index.html 
+  385  vim dockerfile 
+  386  docker build -t marc7567/web1-escalera:latest .
+  387  docker image list
+  388  docker push marc7567/web1-escalera:latest
+  389  docker run -d -p 8080:80 marc7567/web1-escalera
+  390  docker ps
+  391  docker stop 9c7
+  392  docker ps
+  393  docker run -d -p 8080:80 marc7567/web1-escalera
+  394  ./run.sh 
+  395  vim run.sh 
+  396  ./run.sh 
+  397  echo "whoami"
+  398  echo "curl localhost:8080"
+  399  echo "curl localhost:8080" >> esta.txt
+  400  ls -l
+  401  cat esta.txt 
+  402  vim esta.txt 
+  403  rm esta.txt 
+  404  ls -l
+  405  echo '$(#!/bin/bash)' > esta.sh
+  406  ls -l
+  407  vim esta.sh 
+  408  chmod 777 esta.sh 
+  409  ./esta.sh 
+  410  rm esta.sh 
+  411  ls -l
+  412  #!/bin/bash > e.sh
+  413  ls -l
+  414  #!/bin/bash > eesta.sh
+  415  ls -l
+  416  ls -l /etc/
+  417  clear
+  418  curl localhost:8080
+  419  ls -l
+  420  docat dockerfile 
+  421  cat dockerfile 
+  422  clear
+  423  vim dockerfile 
+  424  FROM nginx:latest > esta
+  425  ls -l
+  426  cat esta 
+  427  vim esta 
+  428  FROM nginx:latest >> esta
+  429  sudo FROM nginx:latest >> esta
+  430  vim esta 
+  431  rm esta 
+  432  ls -l
+  433  clear
+  434  echo 'FROM nginx:latest' >> esta
+  435  ls -l
+  436  cat esta 
+  437  cat dockerfile 
+  438  cd UTN-FRA_SO_Examenes/202406/docker/
+  439  ls -l
+  440  cat esta 
+  441  rm esta 
+  442  cat esta 
+  443  ls -l
+  444  clear
+  445  COPY ./index.html /usr/share/nginx/html/index.html >> esta
+  446  ls -l
+  447  cat esta 
+  448  echo 'COPY ./index.html /usr/share/nginx/html/index.html' >> esta
+  449  cat esta 
+  450  docker ps
+  451  stop 30d
+  452  docker stop 30d
+  453  clear
+  454  cd 
+  455  cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114/
+  456  ls -l
+  457  vim Punto_C.sh 
+  458  ./Punto_C.sh 
+  459  curl localhost:8080
+  460  vim Punto_C.sh 
+  461  ./Punto_C.sh 
+  462  vim Punto_C.sh 
+  463  ./Punto_C.sh 
+  464  cd ..
+  465  git add .
+  466  git commit -m "3er commit"
+  467  git push
+  468  docker pull marc7567/web1-escalera
+  469  clear
+  470  cd 
+  471  cd UTN-FRA_SO_Examenes/202406/ansible/
+  472  ls -l
+  473  clear
+  474  tree
+  475  sudo snap install tree
+  476  mkdir -p /home/Escalera/{alumno,equipo}
+  477  tree
+  478  mkdir -p /temp/2do_parcial/{alumno,equipo}
+  479  sudo mkdir -p /temp/2do_parcial/{alumno,equipo}
+  480  ls -l /temp/2do_parcial/
+  481  tree /temp/2do_parcial/
+  482  tree /temp/
+  483  sudo tree /temp/
+  484  clear
+  485  cd UTN-FRA_SO_Examenes/202406/ansible/
+  486  ls -l
+  487  ip
+  488  clear
+  489  exxit
+  490  exit
+  491  sudo su - Escalera 
+  492  exit
+  493  clear
+  494  cd UTN-FRA_SO_Examenes/202406/ansible/
+  495  history -a
+  496  $HOME/.bash_history
+  497  sudo $HOME/.bash_history
+  498  ls -ls
+  499  cd ..
+  500  ls -ls
+  501  cd ..
+  502  ls -ls
+  503  sudo $HOME/.bash_history
+  504  cd ..
+  505  sudo $HOME/.bash_history
+  506  ls -l
+  507  cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/
+  508  sudo $HOME/.bash_history
+  509  ls -l
+  510  ls -l cp_202406/
+  511  sudo $HOME/.bash_history
+  512  history 
+  513  cd 
+  514  ls -l home
+  515  ls -l home/
+  516  ls -l /home/
+  517  ls -l /home/Escalera/
+  518  ls -l /home/Escalera/snap/
+  519  ls -l /home/Escalera/alumno/
+  520  ls -l /home/Escalera/RTA_Examen_20241115/
+  521  ls -l /home/Escalera/UTN-FRA_SO_Examenes/
+  522  ls -l /home/Escalera/UTN-FRA_SO_Examenes/20230521/
+  523  ls -l /home/Escalera/UTN-FRA_SO_Examenes/202310
+  524  ls -l /home/Escalera/UTN-FRA_SO_Examenes/202311
+  525  ls -l /home/Escalera/UTN-FRA_SO_Examenes/202312
+  526  ls -l /home/Escalera/UTN-FRA_SO_Examenes/202311_Recu/
+  527  ls -l /home/Escalera/UTN-FRA_SO_Examenes/202312
+  528  ls -l /home/Escalera/UTN-FRA_SO_Examenes/
+  529  clear
+  530  ls -l /home/Escalera/UTN-FRA_SO_Examenes/
+  531  ls -l /home/Escalera/UTN-FRA_SO_Examenes/20231204/
+  532  ls -l /home/Escalera/UTN-FRA_SO_Examenes/20231205
+  533  ls -l /home/Escalera/UTN-FRA_SO_Examenes/20231211
+  534  ls -l /home/Escalera/UTN-FRA_SO_Examenes/202405
+  535  ls -l /home/Escalera/UTN-FRA_SO_Examenes/202405/Re
+  536  ls -l /home/Escalera/UTN-FRA_SO_Examenes/202405/Resolucion/
+  537  clear
+  538  cd UTN-FRA_SO_Examenes/202406/ansible/
+  539  ls -l
+  540  ls -l roles/
+  541  ls -l roles/2do_parcial/
+  542  ls -l /temp/
+  543  ls -l /temp/2do_parcial/
+  544  ls -l /temp/2do_parcial/alumno/
+  545  ls -l roles/2do_parcial/
+  546  ls -l roles/2do_parcial/README.md 
+  547  ls -l 
+  548  ls -l logs/
+  549  ls -l ansible.cfg 
+  550  ls -l playbook.yml 
+  551  ls -l inventory/
+  552  ls -l roles/
+  553  ls -l roles/2do_parcial/
+  554  ls -l roles/2do_parcial/defaults/
+  555  ls -l roles/2do_parcial/defaults/main.yml 
+  556  ls -l roles/2do_parcial/tasks/
+  557  ls -l roles/2do_parcial/tasks/main.yml 
+  558  cat roles/2do_parcial/tasks/main.yml 
+  559  df -h
+  560  bash_history
+  561  ./bash_history
+  562  ls -l
+  563  tree
+  564  cd ..
+  565  tree
+  566  cd ..
+  567  pwd
+  568  grep -i bash
+  569  grep -i bash_his
+  570  grep -i his
+  571  clear
+  572  tree | grep - his
+  573  tree | grep -i his
+  574  tree | grep -i a
+  575  tree | grep -i .
+  576  tree | grep -i .bash
+  577  cd ..
+  578  tree | grep -i .bash
+  579  clear
+  580  $HOME/.bash_history
+  581  sudo $HOME/.bash_history
+  582  sudo home/.bash_history
+  583  sudo home/Escalera/.bash_history
+  584  ls -l
+  585  cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/
+  586  ls -l
+  587  cd cp_RTA_Examen_20241114/
+  588  ls -l
+  589  sudo home/Escalera/.bash_history
+  590  sudo $HOME/.bash_history
+  591  cd ..
+  592  ls -l
+  593  vin README.md 
+  594  sudo vin README.md 
+  595  vim README.md 
+  596  vim history.txt
+  597  ls -l
+  598  history -a > history.txt 
+  599  cat history.txt 
+  600  history -a > history.txt 
+  601  cat history -a > history.txt 
+  602  vim history.txt 
+  603  history > history.txt 
+  604  cat history.txt 
+  605  clear
+  606  history -a > history.txt 
+  607  cat history.txt 
+  608  clear
+  609  history help
+  610  help history 
+  611  history -a
+  612  $HOME/.bash_history
+  613  sudo $HOME/.bash_history
+  614  cd ..
+  615  pwd
+  616  tree
+  617  cd 
+  618  pwd
+  619  cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/
+  620  tree
+  621  clear
+  622  cd .
+  623  cd ..
+  624  ls -l
+  625  cd UTN-FRA_SO_Examenes/202406/ansible/
+  626  ls -l
+  627  cat README.md 
+  628  ls -l
+  629  cat playbook.yml 
+  630  ls -l inventory/
+  631  ls -l inventory/group_vars/
+  632  ls -l inventory/host
+  633  ls -l inventory/host_vars/
+  634  ls -l 
+  635  ls -l logs/
+  636  ls -l roles/
+  637  ls -l roles/2do_parcial/
+  638  cat roles/2do_parcial/README.md 
+  639  cat README.md 
+  640  ls -l
+  641  ls -l roles/
+  642  ls -l roles/2do_parcial/
+  643  ls -l
+  644  ls -l inventory/host
+  645  ls -l inventory/hosts
+  646  ls -l inventory/
+  647  cat inventory/hosts
+  648  ls -l roles/
+  649  cd ..
+  650  cd 202311_Recu/ansible/
+  651  ls -l 
+  652  cat README.md 
+  653  ls -l 
+  654  ls -l roles/
+  655  ls -l roles/multi_Pruebas/
+  656  ls -l roles/multi_Pruebas/tasks/
+  657  ls -l roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml 
+  658  cat roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml 
+  659  cd ..
+  660  cd 202406
+  661  cd ansible/
+  662  ls -l roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  663  ls -l
+  664  ls -l roles/2do_parcial/
+  665  ls -l roles/2do_parcial/tasks/
+  666  ls -l roles/2do_parcial/
+  667  ls -l roles/2do_parcial/tasks/
+  668  cat roles/2do_parcial/tasks/main.yml
+  669  ls -l roles/2do_parcial/
+  670  cd 
+  671  cd UTN-FRA_SO_Examenes/202311_Recu/
+  672  ls -l
+  673  cd ansible/
+  674  ls -l
+  675  ls -l roles/multi_Pruebas/
+  676  ls -l roles/multi_Pruebas/templates/
+  677  cat roles/multi_Pruebas/templates/template_01.j2 
+  678  ls -l roles/multi_Pruebas/templates/
+  679  ls -l roles/multi_Pruebas/
+  680  ls -l roles/
+  681  ls -l 
+  682  cat README.md 
+  683  pwd
+  684  ls -l
+  685  ls -l roles/multi_Pruebas/tasks/
+  686  cat roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  687  vim roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  688  cd 
+  689  pwd
+  690  cd UTN-FRA_SO_Examenes/202311_Recu/ansible/
+  691  ls -l
+  692  ls -l inventory/hosts
+  693  ls -l inventory/hosts/
+  694  ls -l inventory/
+  695  cat inventory/hosts
+  696  ifconfig 
+  697  clear
+  698  vim roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  699  ansible-playbook -i inventory/hosts playbook.yml
+  700  clear
+  701  ls -l
+  702  ls -l inventory/hosts
+  703  ls -l inventory/
+  704  ls -l inventory/host_vars/
+  705  ansible-playbook -i inventory/hosts playbook.yml
+  706  ls -l
+  707  cat playbook.yml 
+  708  ls -l /tmp/2do_
+  709  ls -l /tmp/
+  710  ls -l 
+  711  ls -l /
+  712  ls -l /temp/s
+  713  ls -l /temp/
+  714  mkdir -p /tmp/2do_parcial/{alumno,equipo}
+  715  ls -l /tmp/
+  716  ls -l /tmp/2do_parcial/
+  717  ls -l /tmp/2do_parcial/alumno/
+  718  vim roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  719  ansible-playbook -i inventory/hosts playbook.yml
+  720  ls -l /tmp/2do_parcial/alumno/
+  721  ls -l /tmp/2do_parcial/
+  722  ls -l /tmp/2do_parcial/a
+  723  ls -l /tmp/2do_parcial/alumno/
+  724  vim roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  725  ifconfig 
+  726  vim roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  727  ls -l
+  728  vim roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  729  cat roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  730  vim texto.j2
+  731  vim texto.txt.j2
+  732  vim roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  733  vim texto2.txt.j2
+  734  cat roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  735  vim texto2.txt.j2
+  736  ls -l
+  737  rm texto.j2 
+  738  cat texto.txt.j2 
+  739  cat texto2.txt.j2 
+  740  clear
+  741  ls -l
+  742  ansible-playbook -i inventory/hosts playbook.yml
+  743  ls -l /tmp/2do_parcial/
+  744  ls -l /tmp/2do_parcial/alumno/
+  745  clear
+  746  ansible-playbook -i playbook.yml
+  747  ansible-playbook playbook.yml
+  748  clear
+  749  ls -l
+  750  cat playbook.yml 
+  751  ls -l 
+  752  ansible-playbook -i roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml texto.txt.j2 
+  753  ansible-playbook -i roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.ym
+  754  ansible-playbook roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.ym
+  755  ansible-playbook roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  756  cllear
+  757  ls -l
+  758  vim playbook.yml 
+  759  vim roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  760  vim texto.txt.j2 
+  761  vim roles/multi_Pruebas/tasks/prueba_202311_Recu2doParcial.yml
+  762  vim texto2.txt.j2 
+  763  cd 
+  764  cd UTN-FRA_SO_Examenes/202406/ansible/
+  765  ls -l
+  766  ls -l inventory/
+  767  vim texto.txt.j2
+  768  vim texto2.txt.j2
+  769  ansible-playbook -i inventory/hosts playbook.yml
+  770  vim playbook.yml 
+  771  ansible-playbook -i inventory/hosts playbook.yml
+  772  ls -l
+  773  ansible-playbook playbook.yml
+  774  ansible-playbook -i inventory/hosts playbook.yml
+  775  ansible-playbook playbook.yml
+  776  vim playbook.yml 
+  777  ansible-playbook playbook.yml
+  778  vim playbook.yml 
+  779  ansible-playbook playbook.yml
+  780  vim playbook.yml 
+  781  ansible-playbook playbook.yml
+  782  vim playbook.yml 
+  783  ansible-playbook playbook.yml
+  784  cat texto.txt.j2 
+  785  cat texto2.txt.j2 
+  786  ansible-playbook playbook.yml
+  787  ls -l /tmp/2do_parcial/
+  788  ls -l /tmp/2do_parcial/alumno/
+  789  cat texto2.txt.j2 
+  790  pwd
+  791  grep -i /etc/passwd
+  792  clear
+  793  grep -i 2 /etc/passwd
+  794  grep -i 2P /etc/passwd
+  795  grep -i Su /etc/passwd
+  796  grep -i Super /etc/passwd
+  797  cd /home/Escalera/UTN-FRA_SO_Examenes/202406/ansible
+  798  ls -l
+  799  cat playbook.yml 
+  800  vim playbook.yml 
+  801  ansible-playbook playbook.yml
+  802  ls -l /tmp/2do_parcial/alumno/
+  803  cat /tmp/2do_parcial/alumno/datos_alumno.txt 
+  804  vim playbook.yml 
+  805  cat /tmp/2do_parcial/alumno/datos_alumno.txt 
+  806  vim playbook.yml 
+  807  cat /tmp/2do_parcial/alumno/datos_alumno.txt 
+  808  ansible-playbook playbook.yml
+  809  cat /tmp/2do_parcial/alumno/datos_alumno.txt 
+  810  cat /tmp/2do_parcial/equipo/
+  811  cat /tmp/2do_parcial/equipo/datos_equipo.txt 
+  812  vim playbook.yml 
+  813  ls -l
+  814  vim texto2.txt.j2 
+  815  ansible-playbook playbook.yml
+  816  vim playbook.yml 
+  817  ansible-playbook playbook.yml
+  818  vim playbook.yml 
+  819  ls -l 
+  820  vim texto.txt.j2 
+  821  vim playbook.yml 
+  822  ansible-playbook playbook.yml
+  823  vim playbook.yml 
+  824  clear
+  825  ansible-playbook playbook.yml
+  826  vim texto2.txt.j2 
+  827  ansible-playbook playbook.yml
+  828  cat /tmp/2do_parcial/alumno/datos_alumno.txt 
+  829  cat /tmp/2do_parcial/equipo/datos_equipo.txt 
+  830  clear
+  831  exit
+  832  CLEAR
+  833  clear
+  834  cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/
+  835  ls -l
+  836  cd cp_RTA_Examen_20241114/
+  837  ls -l
+  838  vim Punto_D.sh 
+  839  ./Punto_D.sh 
+  840  vim Punto_D.sh 
+  841  ./Punto_D.sh 
+  842  cd
+  843  cd UTN-FRA_SO_Examenes/202406/ansible/
+  844  ansible-playbook playbook.yml
+  845  ls -l
+  846  cat playbook.yml 
+  847  ansible-playbook playbook.yml
+  848  vim playbook.yml 
+  849  ansible-playbook playbook.yml
+  850  ls -l /tmp/
+  851  sudo mkdir -p /temp/2do_parcial/{alumno,equipo}
+  852  ls -l /tmp/
+  853  sudo mkdir -p /tmp/2do_parcial/{alumno,equipo}
+  854  ls -l /tmp/
+  855  ls -l /tmp/2do_parcial/
+  856  ansible-playbook playbook.yml
+  857  vim playbook.yml 
+  858  ls -l /tmp/2do_parcial/
+  859  ls -l /tmp/2do_parcial/alumno/
+  860  ansible-playbook playbook.yml
+  861  clear
+  862  cat texto2
+  863  cat texto2.txt.j2 
+  864  cat texto.txt.j2 
+  865  ansible-playbook playbook.yml
+  866  vim playbook.yml
+  867  clear
+  868  ls -l
+  869  ansible-playbook playbook.yml
+  870  ls -l /tmp/
+  871  ls -l /tmp/2do_parcial/
+  872  ls -l /tmp/2do_parcial/alumno/
+  873  ls -l /tmp/2do_parcial/alumno
+  874  ls -l
+  875  vim playbook.yml
+  876  ls -l
+  877  ls -l /tmp/
+  878  ls -l /tmp/2do_parcial
+  879  ls -l /tmp/2do_parcial/
+  880  ls -l /tmp/2do_parcial/alumno/
+  881  ls -l /tmp/2do_parcial/alumno/d
+  882  clear
+  883  vim playbook.yml
+  884  ansible-playbook playbook.yml
+  885  clear
+  886  cd
+  887  cd UTN-FRA_SO_Examenes/
+  888  ls
+  889  cd 202311_Recu/
+  890  cd ansible/
+  891  ls -l
+  892  rm texto.txt.j2 
+  893  rm texto2.txt.j2 
+  894  vim playbook.yml 
+  895  cd
+  896  cd UTN-FRA_SO_Examenes/202406/ansible/
+  897  vim texto.txt.j2 
+  898  vim playbook.yml 
+  899  ansible-playbook playbook.yml
+  900  vim playbook.yml 
+  901  ansible-playbook playbook.yml
+  902  vim playbook.yml 
+  903  ansible-playbook playbook.yml
+  904  vim playbook.yml 
+  905  ansible-playbook playbook.yml
+  906  vim playbook.yml 
+  907  ansible-playbook playbook.yml
+  908  ls -l /tmp
+  909  sudo chmod -R 755 /tmp/2do_parcial
+  910  clear
+  911  ansible-playbook playbook.yml
+  912  vim playbook.yml 
+  913  ansible-playbook playbook.yml
+  914  ls -l /tmp/2do_parcial/
+  915  ls -l /tmp/2do_parcial/alumno/
+  916  cat /tmp/2do_parcial/alumno/datos_alumno.txt 
+  917  cat /tmp/2do_parcial/alumno/datos_alumno.txt
+  918  vim playbook.yml 
+  919  clear
+  920  ls -l
+  921  echo 'hola: {{ esta }}' > esta.txt.j2
+  922  ls -l
+  923  cat esta.txt.j2 
+  924  cat texto.txt.j2 
+  925  cat texto2.txt.j2 
+  926  vim texto2.txt.j2 
+  927  cat texto2.txt.j2 
+  928  cat /tmp/2do_parcial/equipo/datos_equipo.txt 
+  929  clear
+  930  cat texto2.txt.j2 
+  931  cd 1q\s
+  932  cd
+  933  cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114/
+  934  vim Punto_D.sh 
+  935  ./Punto_D.sh 
+  936  vim Punto_D.sh 
+  937  ./Punto_D.sh 
+  938  vim Punto_D.sh 
+  939  ./Punto_D.sh 
+  940  Escalera@VMParcial2:~/UTN-FRA_SO_Examenes/202406/ansible$ cat texto2.txt.j2
+  941  IP: {{ ip }}
+  942  distribucion: {{ distribucion }}
+  943  cantidad de Cores: {{ cant_cores }}
+  944  Escalera@VMParcial2:~/UTN-FRA_SO_Examenes/202406/ansible$ cd > 1> q\s
+  945  -bash: cd: 1qs: No such file or directory
+  946  Escalera@VMParcial2:~/UTN-FRA_SO_Examenes/202406/ansible$ cd
+  947  Escalera@VMParcial2:~$ cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114/
+  948  Escalera@VMParcial2:~/UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114$ vim Punto_D.sh
+  949  Escalera@VMParcial2:~/UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114$ ./Punto_D.sh
+  950  ./Punto_D.sh: line 4: cd: home/Escalera/UTN-FRA_SO_Examenes/202406/ansible/: No such file or directory
+  951  [sudo] password for Escalera:
+  952  total 8
+  953  drwxr-xr-x 2 root root 4096 Nov 16 20:00 alumno
+  954  drwxr-xr-x 2 root root 4096 Nov 16 20:00 equipo
+  955  modificar a mano el archivo plalbook.yml
+  956  [WARNING]: No inventory was parsed, only implicit localhost is available
+  957  [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does
+  958  not match 'all'
+  959  PLAY [generar archivos datos_alumnos.txt y datos_equipo.txt usando plantillas] ********************************
+  960  TASK [crear el archivo datos_alumno.txt] **********************************************************************
+  961  ok: [localhost]
+  962  TASK [crear el archivo datos_equipo.txt] **********************************************************************
+  963  changed: [localhost]
+  964  PLAY RECAP ****************************************************************************************************
+  965  localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+  966  Nombre: Marcos Emanuel
+  967  Apellido: Escalera Calizaya
+  968  Division: 113
+  969  IP: 10.0.2.15
+  970  distribucion: windows 11
+  971  cantidad de Cores: 8
+  972  Escalera@VMParcial2:~/UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114$ vim Punto_D.sh           Escalera@VMParcial2:~/UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114$ ./Punto_D.sh
+  973  ./Punto_D.sh: line 4: cd: home/Escalera/UTN-FRA_SO_Examenes/202406/ansible/: No such file or directory
+  974  total 8
+  975  drwxr-xr-x 2 root root 4096 Nov 16 20:00 alumno
+  976  drwxr-xr-x 2 root root 4096 Nov 16 20:00 equipo
+  977  modificar a mano el archivo plalbook.yml
+  978  cat: home/Escalera/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml: No such file or directory
+  979  [WARNING]: No inventory was parsed, only implicit localhost is available
+  980  [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does
+  981  not match 'all'
+  982  PLAY [generar archivos datos_alumnos.txt y datos_equipo.txt usando plantillas] ********************************
+  983  TASK [crear el archivo datos_alumno.txt] **********************************************************************
+  984  ok: [localhost]
+  985  TASK [crear el archivo datos_equipo.txt] **********************************************************************
+  986  ok: [localhost]
+  987  PLAY RECAP ****************************************************************************************************
+  988  localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+  989  datos del alumno
+  990  Nombre: Marcos Emanuel
+  991  Apellido: Escalera Calizaya
+  992  Division: 113
+  993  datos del equipo
+  994  IP: 10.0.2.15
+  995  distribucion: windows 11
+  996  cantidad de Cores: 8
+  997  Escalera@VMParcial2:~/UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114$ ./Punto_D.sh
+  998  ./Punto_D.sh: line 4: cd: home/Escalera/UTN-FRA_SO_Examenes/202406/ansible/: No such file or directory
+  999  [sudo] password for Escalera:
+ 1000  total 8
+ 1001  drwxr-xr-x 2 root root 4096 Nov 16 20:00 alumno
+ 1002  drwxr-xr-x 2 root root 4096 Nov 16 20:00 equipo
+ 1003  modificar a mano el archivo plalbook.yml
+ 1004  cat: home/Escalera/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml: No such file or directory
+ 1005  [WARNING]: No inventory was parsed, only implicit localhost is available
+ 1006  [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does
+ 1007  not match 'all'
+ 1008  PLAY [generar archivos datos_alumnos.txt y datos_equipo.txt usando plantillas] ********************************
+ 1009  TASK [crear el archivo datos_alumno.txt] **********************************************************************
+ 1010  ok: [localhost]
+ 1011  TASK [crear el archivo datos_equipo.txt] **********************************************************************
+ 1012  ok: [localhost]
+ 1013  PLAY RECAP ****************************************************************************************************
+ 1014  localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+ 1015  datos del alumno
+ 1016  Nombre: Marcos Emanuel
+ 1017  Apellido: Escalera Calizaya
+ 1018  Division: 113
+ 1019  datos del equipo
+ 1020  IP: 10.0.2.15
+ 1021  distribucion: windows 11
+ 1022  cantidad de Cores: 8
+ 1023  Escalera@VMParcial2:~/UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114$ vim Punto_D.sh
+ 1024  Escalera@VMParcial2:~/UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114$ ./Punto_D.sh
+ 1025  ./Punto_D.sh: line 4: cd: home/Escalera/UTN-FRA_SO_Examenes/202406/ansible/: No such file or directory
+ 1026  total 8
+ 1027  drwxr-xr-x 2 root root 4096 Nov 16 20:00 alumno
+ 1028  drwxr-xr-x 2clear
+ 1029  sudo ls /root/
+ 1030  sudo ls /root
+ 1031  sudo vim
+ 1032  clear
+ 1033  sudo visudo
+ 1034  vim visudo
+ 1035  sudo visudo
+ 1036  clear
+ 1037  sudo visudo
+ 1038  ls -l
+ 1039  rm alumno/
+ 1040  rm -r alumno/
+ 1041  rm -r equipo/
+ 1042  ls -l
+ 1043  clear
+ 1044  sudo visudo
+ 1045  sudo lsof /etc/sudoers
+ 1046  sudo visudo
+ 1047  clear
+ 1048  exit
+ 1049  sudo visudo
+ 1050  sudo ls /root
+ 1051  groups 2P_202406_Supervisores 
+ 1052  groups 2P_202406_Supervisores
+ 1053  groups 2PSupervisores
+ 1054  groups 2P_202406_Supervisores
+ 1055  echo 'sudo visudo'
+ 1056  echo 'agregamos la siguentes lineas: %2PSupervisoes ALL=(ALL) NOPASSWD: ALL'
+ 1057  clear
+ 1058  sudo ls /root/
+ 1059  cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/
+ 1060  cd cp_RTA_Examen_20241114/
+ 1061  vim Punto_D.sh 
+ 1062  ./Punto_D.sh 
+ 1063  vim Punto_D.sh 
+ 1064  ./Punto_D.sh 
+ 1065  ./Punto_B.sh 
+ 1066  ./Punto_C.sh 
+ 1067  docker ps
+ 1068  vim Punto_C.sh 
+ 1069  cd 
+ 1070  cd UTN-FRA_SO_Examenes/202406/docker/
+ 1071  ls -l
+ 1072  cat dockerfile
+ 1073  cat dockerfile_2 
+ 1074  cat esta 
+ 1075  rm esta 
+ 1076  cat index.html 
+ 1077  pwd
+ 1078  cd 
+ 1079  cd UTNFRA_SO_2do_Parcial_Escalera_Calizaya/cp_RTA_Examen_20241114/
+ 1080  ls
+ 1081  rm texto.txt.j2 
+ 1082  rm texto2.txt.j2 
+ 1083  ls
+ 1084  vim Punto_C.sh 
+ 1085  ./Punto_C.sh 
+ 1086  vim Punto_C.sh 
+ 1087  cat /home/Escalera/UTN-FRA_SO_Examenes/202406/docker/index.hmtl
+ 1088  cat /home/Escalera/UTN-FRA_SO_Examenes/202406/docker/index.html 
+ 1089  vim Punto_C.sh 
+ 1090  ./Punto_C.sh 
+ 1091  vim Punto_C.sh 
+ 1092  cd ..
+ 1093  cd cp_RTA_Examen_20241114/
+ 1094  vim Punto_D.sh 
+ 1095  cd ..
+ 1096  history -a
+ 1097  ls
+ 1098  history -a
+ 1099  history > history.txt 

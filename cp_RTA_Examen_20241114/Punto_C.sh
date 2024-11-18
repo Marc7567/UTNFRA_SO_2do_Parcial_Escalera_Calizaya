@@ -8,6 +8,9 @@ cd /home/Escalera/UTN-FRA_SO_Examenes/202406/docker
 echo 'FROM nginx:latest' > dockerfile_2
 echo 'COPY ./index.html /usr/share/nginx/html/index.html' >> dockerfile_2
 
+echo 'contenido de index.hmtl'
+cat /home/Escalera/UTN-FRA_SO_Examenes/202406/docker/index.html
+
 #construimos la imagen de docker
 docker build -t marc7567/web1-escalera:latest .
 
